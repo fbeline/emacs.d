@@ -26,7 +26,14 @@
   :ensure t
   :config
   (require 'google-translate-smooth-ui)
-  (setq google-translate-translation-directions-alist '(("en" . "pt"))))
+  (setq google-translate-translation-directions-alist '(("en" . "pt")))
+  (evil-leader/set-key
+    "t" 'google-translate-smooth-translate))
+
+(use-package moe-theme
+  :ensure t
+  :config
+  (load-theme 'moe-light t))
 
 (provide 'init-miscellaneous)
 

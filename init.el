@@ -33,10 +33,6 @@
 
 (require 'use-package)
 
-(use-package ag
-  :ensure t
-  :commands (ag ag-regexp ag-project))
-
 ;;;;
 ;; Customizations.
 ;;;;
@@ -55,16 +51,20 @@
 (require 'init-web-developer-tools)
 (require 'init-evil)
 
+(use-package ag
+  :ensure t
+  :commands (ag ag-regexp ag-project))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (adwaita)))
+ ;;'(custom-enabled-themes (quote (adwaita)))
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (ag evil-magit evil-goggles evil-commentary evil-collection robe seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
+    (moe-theme ag evil-magit evil-goggles evil-commentary evil-collection robe seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
  '(safe-local-variable-values (quote ((folded-file . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
