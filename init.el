@@ -33,11 +33,16 @@
 
 (require 'use-package)
 
+(use-package ag
+  :ensure t
+  :commands (ag ag-regexp ag-project))
+
 ;;;;
 ;; Customizations.
 ;;;;
 (require 'init-clojure)
 (require 'init-company)
+(require 'init-projectile)
 (require 'init-dired)
 (require 'init-editing)
 (require 'init-flycheck)
@@ -59,7 +64,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (evil-magit evil-goggles evil-commentary evil-collection robe inf-ruby seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens slack restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
+    (ag evil-magit evil-goggles evil-commentary evil-collection robe seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
  '(safe-local-variable-values (quote ((folded-file . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
