@@ -3,7 +3,7 @@
   :bind (:map company-active-map
               ("C-n" . company-select-next)
               ("C-p" . company-select-previous))
-  :config
-  (global-company-mode))
+  :init
+  (global-company-mode 1))
 
 (provide 'init-company)
