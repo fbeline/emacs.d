@@ -58,7 +58,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (robe inf-ruby seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens slack restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
+    (evil-goggles evil-commentary evil-collection robe inf-ruby seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens slack restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
  '(safe-local-variable-values (quote ((folded-file . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

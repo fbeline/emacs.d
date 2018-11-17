@@ -3,20 +3,33 @@
 ;;;;
 (use-package evil
   :ensure t
+  :init
+  (setq evil-ex-complete-emacs-commands nil)
+  (setq evil-shift-round nil)
+  (setq evil-want-C-u-scroll t)
   :config
-  (evil-mode 1)
+  (evil-mode 1))
 
-  (use-package evil-leader
-    :ensure t
-    :config
-    (global-evil-leader-mode))
+(use-package evil-leader
+  :after evil
+  :ensure t
+  :config
+  (global-evil-leader-mode))
 
-  (use-package evil-surround
-    :ensure t
-    :config
-    (global-evil-surround-mode))
+(use-package evil-indent-textobject
+  :after evil
+  :ensure t)
 
-  (use-package evil-indent-textobject
-    :ensure t))
+(use-package evil-commentary
+  :after evil
+  :ensure t
+  :bind (:map evil-normal-state-map
+              ("gc" . evil-commentary)))
+
+(use-package evil-goggles
+  :after evil
+  :ensure t
+  :config
+  (evil-goggles-mode))
 
 (provide 'init-evil)
