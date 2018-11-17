@@ -1,4 +1,4 @@
-;;;;
+                                        ;"repl :headless :host localhost";;;
 ;;
 ;;;;
 
@@ -55,16 +55,20 @@
   :ensure t
   :commands (ag ag-regexp ag-project))
 
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode +1))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;;'(custom-enabled-themes (quote (adwaita)))
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (moe-theme ag evil-magit evil-goggles evil-commentary evil-collection robe seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
+    (which-key moe-theme ag evil-magit evil-goggles evil-commentary evil-collection robe seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
  '(safe-local-variable-values (quote ((folded-file . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
