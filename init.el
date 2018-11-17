@@ -36,7 +36,6 @@
 ;;;;
 ;; Customizations.
 ;;;;
-(require 'init-evil)
 (require 'init-clojure)
 (require 'init-company)
 (require 'init-dired)
@@ -48,6 +47,7 @@
 (require 'init-general-preferences)
 (require 'init-yasnippet)
 (require 'init-web-developer-tools)
+(require 'init-evil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -58,7 +58,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (evil-goggles evil-commentary evil-collection robe inf-ruby seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens slack restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
+    (evil-magit evil-goggles evil-commentary evil-collection robe inf-ruby seeing-is-believing yasnippet-snippets yaml-mode web-mode use-package smartparens slack restclient projectile markdown-mode magit json-mode flycheck flx-ido company clj-refactor aggressive-indent)))
  '(safe-local-variable-values (quote ((folded-file . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -1,6 +1,7 @@
 ;;;;
 ;; Install and configure evil.
 ;;;;
+
 (use-package evil
   :ensure t
   :init
@@ -31,5 +32,12 @@
   :ensure t
   :config
   (evil-goggles-mode))
+
+(use-package evil-magit
+  :after evil
+  :ensure t
+  :config
+  (progn
+    (evil-leader/set-key "gs" 'magit-status)))
 
 (provide 'init-evil)
