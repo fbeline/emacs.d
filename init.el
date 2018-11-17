@@ -46,6 +46,7 @@
 (require 'init-smartparens)
 (require 'init-general-preferences)
 (require 'init-yasnippet)
+(require 'init-neotree)
 (require 'init-web-developer-tools)
 (require 'init-evil)
 
