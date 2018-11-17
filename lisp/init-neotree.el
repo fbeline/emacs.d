@@ -16,6 +16,8 @@
     (kbd "I")   'neotree-hidden-file-toggle
     (kbd "H")   'neotree-hidden-file-toggle
     (kbd "q")   'neotree-hide
+    (kbd "s")   'neotree-enter-vertical-split
+    (kbd "S")   'neotree-enter-horizontal-split
     (kbd "l")   'neotree-enter))
 
 (provide 'init-neotree)
