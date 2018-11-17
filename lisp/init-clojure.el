@@ -4,7 +4,8 @@
 (use-package cider
   :ensure t
   :init
-  (setq cider-repl-display-help-banner nil))
+  (setq cider-repl-display-help-banner nil)
+  (setq cider-lein-parameters "repl :headless :host localhost"))
 
 (use-package clojure-mode
   :ensure t)
