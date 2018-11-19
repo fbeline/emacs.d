@@ -37,6 +37,7 @@
 ;; Customizations.
 ;;;;
 (require 'init-clojure)
+(require 'init-haskell)
 (require 'init-company)
 (require 'init-projectile)
 (require 'init-dired)
@@ -65,6 +66,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(haskell-ask-also-kill-buffers nil)
+ '(haskell-interactive-popup-errors nil)
+ '(haskell-process-type (quote stack-ghci))
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
