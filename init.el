@@ -66,6 +66,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-ghc-show-info t)
  '(haskell-ask-also-kill-buffers nil)
  '(haskell-interactive-popup-errors nil)
  '(haskell-process-type (quote stack-ghci))
