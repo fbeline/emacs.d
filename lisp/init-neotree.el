@@ -3,6 +3,7 @@
   :bind (("<f2>" . neotree-toggle))
   :defer
   :config
+  (setq neo-autorefresh nil)
   (evil-set-initial-state 'neotree-mode 'normal)
   (evil-define-key 'normal neotree-mode-map
     (kbd "RET") 'neotree-enter
