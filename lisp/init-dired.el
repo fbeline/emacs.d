@@ -1,3 +1,5 @@
+(when (eq system-type 'darwin)
+  (setq insert-directory-program "/usr/local/bin/gls"))
 
 (defun my-dired-keybindings ()
   "Custom keybindings for dired-mode."
