@@ -19,4 +19,29 @@
 
 (add-hook 'clojure-mode-hook #'my-clojure-hook)
 
+(defun set-test-indent ()
+  (define-clojure-indent
+    (against-background 'defun)
+    (alet 'defun)
+    (as-customer 1)
+    (as-of 1)
+    (constraint-fn 'defun)
+    (data-fn 'defun)
+    (facts 'defun)
+    (fact 'defun)
+    (for-all 'defun)
+    (flow 'defun)
+    (future-fact 'defun)
+    (let-entities 'defun)
+    (log-messages 'defun)
+    (mlet 'defun)
+    (provided 'defun)
+    (request-context 'defun)
+    (tabular 'defun)
+    (tabular-flow 'defun)
+    (verify 'defun)))
+
+(eval-after-load 'clojure-mode
+  '(set-test-indent))
+
 (provide 'init-clojure)
