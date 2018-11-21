@@ -4,6 +4,8 @@
 
 (use-package evil
   :ensure t
+  :bind (:map evil-normal-state-map
+              ("M-." . nil))
   :init
   (setq evil-ex-complete-emacs-commands nil)
   (setq evil-shift-round nil)
@@ -39,5 +41,11 @@
   :config
   (progn
     (evil-leader/set-key "gs" 'magit-status)))
+
+(eval-after-load "evil-maps"
+  (dolist (map '(evil-motion-state-map
+                 evil-insert-state-map
+                 evil-emacs-state-map))
+    (define-key (eval map) "\M-." nil)))
 
 (provide 'init-evil)
