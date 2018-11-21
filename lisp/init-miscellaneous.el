@@ -33,8 +33,17 @@
 (use-package moe-theme
   :ensure t
   :config
-  (load-theme 'moe-light t))
+  (load-theme 'moe-dark t))
+
+(defun fontify-frame (frame)
+  (interactive)
+  (if window-system
+      (progn
+        (if (> (x-display-pixel-width) 2000)
+            (set-frame-parameter frame 'font "Source Code Pro 17")
+         (set-frame-parameter frame 'font "Source Code Pro 14")))))
+
+(fontify-frame nil)
+(push 'fontify-frame after-make-frame-functions)
 
 (provide 'init-miscellaneous)
-
-;;; init-miscellaneous.el ends here
