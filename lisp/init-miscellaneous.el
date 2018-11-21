@@ -41,7 +41,7 @@
       (progn
         (if (> (x-display-pixel-width) 2000)
             (set-frame-parameter frame 'font "Source Code Pro 17")
-         (set-frame-parameter frame 'font "Source Code Pro 14")))))
+          (set-frame-parameter frame 'font "Source Code Pro 12")))))
 
 (fontify-frame nil)
 (push 'fontify-frame after-make-frame-functions)
