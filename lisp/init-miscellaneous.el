@@ -1,39 +1,33 @@
-;;; init-miscellaneous.el --- summary -*- lexical-binding: t -*-
-
-;; This file is not part of GNU Emacs
-
-;; This file is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 3, or (at your option)
-;; any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; For a full copy of the GNU General Public License
-;; see <http://www.gnu.org/licenses/>.
-
-
-;;; Commentary:
-
-;; commentary
-
-;;; Code:
-
-(use-package google-translate
-  :ensure t
-  :config
-  (require 'google-translate-smooth-ui)
-  (setq google-translate-translation-directions-alist '(("en" . "pt")))
-  (evil-leader/set-key
-    "t" 'google-translate-smooth-translate))
-
 (use-package moe-theme
   :ensure t
   :config
   (load-theme 'moe-dark t))
+
+(use-package recentf
+  :ensure t
+  :config
+  (setq recentf-max-saved-items 100
+        recentf-max-menu-items 15
+        recentf-auto-cleanup 'never)
+  (recentf-mode +1))
+
+(use-package ido
+  :init (progn
+          (ido-mode)
+          (ido-everywhere))
+  :config
+  (setq ido-enable-flex-matching t
+        ido-create-new-buffer 'always
+        ido-use-filename-at-point 'guess
+        ido-default-file-method 'selected-window
+        ido-default-buffer-method 'selected-window
+        ido-use-faces nil))
+
+(defun er-recentf-ido-find-file ()
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
 
 (defun fontify-frame (frame)
   (interactive)
@@ -41,9 +35,11 @@
       (progn
         (if (> (x-display-pixel-width) 2000)
             (set-frame-parameter frame 'font "Source Code Pro 17")
-         (set-frame-parameter frame 'font "Source Code Pro 14")))))
+          (set-frame-parameter frame 'font "Source Code Pro 14")))))
 
 (fontify-frame nil)
 (push 'fontify-frame after-make-frame-functions)
+
+(global-set-key (kbd "C-c e") #'er-recentf-ido-find-file)
 
 (provide 'init-miscellaneous)
